@@ -13,7 +13,7 @@ function drawCars(cars) {
         <p>${car.price}</p>
         <p>${car.year}</p>
         <p>${car.description}</p>
-        <img src="${car.imgUrl}" alt="somethingelse">
+        <img src="${car.imgUrl}" alt="somethingelse" class="mh">
     </div>
     `
   }
@@ -31,7 +31,7 @@ export default class CarController {
   addCar(triggeredEvent) {
     triggeredEvent.preventDefault();
     let formData = triggeredEvent.target
-    carService.addCar(formData)
+    carService.addCar(formData, drawCars)
     formData.reset()
     drawCars()
   }
