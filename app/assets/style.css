@@ -1,3 +1,19 @@
 .mh {
   width: 100%;
 }
+
+form {
+  display: none;
+}
+
+#cars-radio:checked ~ #cars-form {
+  display: block;
+}
+
+#jobs-radio:checked ~ #jobs-form {
+  display: block;
+}
+
+#houses-radio:checked ~ #houses-form {
+  display: block;
+}

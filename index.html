@@ -13,33 +13,103 @@
 
 <body>
 
-  <form onsubmit="app.controllers.carController.addCar(event)">
-    <label for="make">Make</label>
-    <input type="text" name="make" placeholder="Chevy" required>
-    <label for="model">Model</label>
-    <input type="text" name="model" placeholder="Silverado" required>
-    <label for="year">Year</label>
-    <input type="number" name="year" placeholder="2007" required>
-    <label for="price">Price</label>
-    <input type="text" name="price" placeholder="16999" required>
-    <label for="color">Color</label>
-    <input type="text" name="color" placeholder="maroon" required>
-    <label for="make">Img</label>
-    <input type="url" name="imgUrl" placeholder="Image Link" required>
-    <button type="submit">Add Car</button>
-  </form>
+  <div>
+    <label for="cars-radio">Cars</label>
+    <input id="cars-radio" type="radio" name="radio">
+    <label for="jobs-radio">Jobs</label>
+    <input id="jobs-radio" type="radio" name="radio">
+    <label for="houses-radio">Houses</label>
+    <input id="houses-radio" type="radio" name="radio">
+
+    <form id="cars-form" onsubmit="app.controllers.carController.addCar(event)">
+      <div class="form-group">
+        <label for="make">Make</label>
+        <input class="form-control w-25" id="make" type="text" name="make" placeholder="Chevy" required />
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input class="form-control w-25" id="model" type="text" name="model" placeholder="Silverado" required />
+      </div>
+      <div class="form-group">
+        <label for="car-year">Year</label>
+        <input class="form-control w-25" id="car-year" type="number" name="car-year" value="2000" required />
+      </div>
+      <div class="form-group">
+        <label for="car-price">Price</label>
+        <input class="form-control w-25" id="car-price" type="text" name="car-price" placeholder="16999" required />
+      </div>
+      <div class="form-group">
+        <label for="car-description">Description</label>
+        <input class="form-control w-25" id="car-color" type="text" name="car-description" placeholder="Optional" required />
+      </div>
+      <div class="form-group">
+        <label for="car-img">Img</label>
+        <input class="form-control w-25" id="car-img" type="url" name="car-img" placeholder="Image Link" required />
+      </div>
+      <button class="btn btn-primary" type="submit">Add Car</button>
+    </form>
+
+    <form id="jobs-form" onsubmit="app.controllers.carController.addCar(event)">
+      <div class="form-group">
+        <label for="company">Company</label>
+        <input class="form-control w-25" id="company" type="text" name="company" placeholder="Google" required />
+      </div>
+      <div class="form-group">
+        <label for="job-title">Job Title</label>
+        <input class="form-control w-25" id="job-title" type="text" name="job-title" placeholder="Software Engineer" required />
+      </div>
+      <div class="form-group">
+        <label for="hours">Hours</label>
+        <input class="form-control w-25" id="hours" type="number" name="hours" placeholder="80" required />
+      </div>
+      <div class="form-group">
+        <label for="rate">Rate</label>
+        <input class="form-control w-25" id="rate" type="number" name="rate" placeholder="120" required />
+      </div>
+      <div class="form-group">
+        <label for="job-description">Description</label>
+        <input class="form-control w-25" id="job-description" type="text" name="job-description" placeholder="Optional" required
+        />
+      </div>
+      <button class="btn btn-primary" type="submit">Add Job</button>
+    </form>
+
+    <form id="houses-form" onsubmit="app.controllers.carController.addCar(event)">
+      <div class="form-group">
+        <label for="bedrooms">Bedrooms</label>
+        <input class="form-control w-25" id="bedrooms" type="number" name="bedrooms" placeholder="4" required />
+      </div>
+      <div class="form-group">
+        <label for="bathrooms">Bathrooms</label>
+        <input class="form-control w-25" id="bathrooms" type="number" name="bathrooms" placeholder="2" required />
+      </div>
+      <div class="form-group">
+        <label for="house-url">imgUrl</label>
+        <input class="form-control w-25" id="house-url" type="url" name="house-url" placeholder="img Link" required />
+      </div>
+      <div class="form-group">
+        <label for="levels">Levels</label>
+        <input class="form-control w-25" id="levels" type="number" name="levels" placeholder="2" required />
+      </div>
+      <div class="form-group">
+        <label for="house-year">Year</label>
+        <input class="form-control w-25" id="house-year" type="number" name="house-year" placeholder="2015" required />
+      </div>
+      <div class="form-group">
+        <label for="house-price">Price</label>
+        <input class="form-control w-25" id="house-price" type="number" name="house-price" placeholder="200000" required />
+      </div>
+      <div class="form-group">
+        <label for="house-desc">Description</label>
+        <input class="form-control w-25" id="house-desc" type="text" name="house-desc" placeholder="Optional" required />
+      </div>
+      <button class="btn btn-primary" type="submit">Add Car</button>
+    </form>
+  </div>
+
 
   <div class="container">
-    <div id="cars" class="row">
-      <!-- <div class="col-3">
-        <p>${car.make}</p>
-        <p>${car.model}</p>
-        <p>${car.price}</p>
-        <p>${car.year}</p>
-        <p>${car.color}</p>
-        <img src="${car.imgUrl}" alt="somethingelse">
-      </div> -->
-    </div>
+    <div id="cars" class="row"></div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>

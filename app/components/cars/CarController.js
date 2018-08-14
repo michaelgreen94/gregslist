@@ -11,11 +11,12 @@ function drawCars(cars) {
         <img src="${car.imgUrl}" alt="somethingelse" class="mh">
         <p>Make: ${car.make}</p>
         <p>${car.model}</p>
-        <p>${car.price}</p>
+        <p>$${car.price}</p>
+        <button onclick="app.controllers.carController.bid('${car._id}', ${car.price})">BID</button>
         <p>${car.year}</p>
         <p>${car.description}</p>
-    </div>
-    `
+        <button onclick=""app.controllers.carController.delete('${car._id}')>DELETE</buttong>
+    </div>`
   }
 
   document.getElementById('cars').innerHTML = template
@@ -25,14 +26,26 @@ function drawCars(cars) {
 export default class CarController {
 
   constructor() {
-    carService.getCars(drawCars)
   }
 
   addCar(triggeredEvent) {
     triggeredEvent.preventDefault();
     let formData = triggeredEvent.target
     carService.addCar(formData, drawCars)
+    carService.getCars(drawCars)
     formData.reset()
+  }
+
+  deleteCar(id) {
+    carService.deleteCar(id, drawCars)
+  }
+
+  bid(id, price) {
+    price++
+    let update = {
+      price: price
+    }
+    carService.bid(id, update, drawCars)
   }
 
 }
