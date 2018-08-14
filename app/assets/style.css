@@ -1,5 +1,6 @@
-.mh {
-  width: 100%;
+.img-fit {
+  height: 250px;
+  object-fit: cover;
 }
 
 form {

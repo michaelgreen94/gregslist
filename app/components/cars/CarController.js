@@ -7,15 +7,21 @@ function drawCars(cars) {
   for (let i = 0; i < cars.length; i++) {
     const car = cars[i];
     template += `
-    <div style="outline: 1px solid black" class="col-3">
-        <img src="${car.imgUrl}" alt="somethingelse" class="mh">
-        <p>Make: ${car.make}</p>
-        <p>${car.model}</p>
-        <p>$${car.price}</p>
-        <button onclick="app.controllers.carController.bid('${car._id}', ${car.price})">BID</button>
-        <p>${car.year}</p>
-        <p>${car.description}</p>
-        <button onclick="app.controllers.carController.deleteCar('${car._id}')">DELETE</buttong>
+    <div style="width: 18rem;" class="card mx-2 my-2">
+    <img src="${car.imgUrl}" alt="somethingelse" class="card-img-top img-fit">
+      <div class="card-body">
+        <p class="card-text display-block text-truncate"><strong>Description:</strong> ${car.description}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Make:</strong> ${car.make}</li>
+        <li class="list-group-item"><strong>Model:</strong> ${car.model}</li>
+        <li class="list-group-item"><strong>Price: $</strong> ${car.price}</li>
+        <li class="list-group-item"><strong>Year:</strong> ${car.year}</li>
+      </ul>
+      <div class="card-body">
+      <button class="btn btn-success" onclick="app.controllers.carController.bid('${car._id}', ${car.price})">BID</button>
+      <button class="btn btn-outline-danger" onclick="app.controllers.carController.deleteCar('${car._id}')">DELETE</buttong>
+      </div>
     </div>`
   }
 
