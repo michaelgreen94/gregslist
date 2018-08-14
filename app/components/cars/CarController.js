@@ -8,12 +8,12 @@ function drawCars(cars) {
     const car = cars[i];
     template += `
     <div style="outline: 1px solid black" class="col-3">
+        <img src="${car.imgUrl}" alt="somethingelse" class="mh">
         <p>Make: ${car.make}</p>
         <p>${car.model}</p>
         <p>${car.price}</p>
         <p>${car.year}</p>
         <p>${car.description}</p>
-        <img src="${car.imgUrl}" alt="somethingelse" class="mh">
     </div>
     `
   }
@@ -33,7 +33,6 @@ export default class CarController {
     let formData = triggeredEvent.target
     carService.addCar(formData, drawCars)
     formData.reset()
-    drawCars()
   }
 
 }
