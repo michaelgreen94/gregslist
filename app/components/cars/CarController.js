@@ -20,7 +20,6 @@ function drawCars(cars) {
 
   document.getElementById('cars').innerHTML = template
 
-
 }
 
 export default class CarController {
