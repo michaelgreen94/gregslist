@@ -46,9 +46,16 @@ export default class CarService {
 
   deleteCar(id, draw) {
     carsApi.delete(id)
+      .then(res => {
+        this.getCars(draw)
+      })
+
   }
 
   bid(id, update, draw) {
     carsApi.put(id, update)
+      .then(res => {
+        this.getCars(draw)
+      })
   }
 }

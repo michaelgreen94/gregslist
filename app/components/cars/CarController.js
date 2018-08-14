@@ -15,7 +15,7 @@ function drawCars(cars) {
         <button onclick="app.controllers.carController.bid('${car._id}', ${car.price})">BID</button>
         <p>${car.year}</p>
         <p>${car.description}</p>
-        <button onclick=""app.controllers.carController.delete('${car._id}')>DELETE</buttong>
+        <button onclick="app.controllers.carController.deleteCar('${car._id}')">DELETE</buttong>
     </div>`
   }
 
@@ -26,13 +26,13 @@ function drawCars(cars) {
 export default class CarController {
 
   constructor() {
+    carService.getCars(drawCars)
   }
 
   addCar(triggeredEvent) {
     triggeredEvent.preventDefault();
     let formData = triggeredEvent.target
     carService.addCar(formData, drawCars)
-    carService.getCars(drawCars)
     formData.reset()
   }
 
