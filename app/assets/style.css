@@ -1,3 +1,8 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
 .img-fit {
   height: 250px;
   object-fit: cover;
@@ -7,14 +12,14 @@ form {
   display: none;
 }
 
-#cars-radio:checked ~ #cars-form {
+#cars-radio:checked ~ .flex-container #cars-form {
   display: block;
 }
 
-#jobs-radio:checked ~ #jobs-form {
+#jobs-radio:checked ~ .flex-container #jobs-form {
   display: block;
 }
 
-#houses-radio:checked ~ #houses-form {
+#houses-radio:checked ~ .flex-container #houses-form {
   display: block;
 }
