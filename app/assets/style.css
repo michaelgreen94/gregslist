@@ -1,6 +1,20 @@
-.flex-container {
-  display: flex;
-  justify-content: center;
+html,
+body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+form {
+  display: none;
 }
 
 .img-fit {
@@ -8,18 +22,14 @@
   object-fit: cover;
 }
 
-form {
-  display: none;
-}
-
-#cars-radio:checked ~ .flex-container #cars-form {
+#cars-radio:checked~#cars-form {
   display: block;
 }
 
-#jobs-radio:checked ~ .flex-container #jobs-form {
+#jobs-radio:checked~#jobs-form {
   display: block;
 }
 
-#houses-radio:checked ~ .flex-container #houses-form {
+#houses-radio:checked~#houses-form {
   display: block;
 }
