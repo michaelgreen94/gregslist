@@ -5,7 +5,7 @@ let cars = []
 //creates a new HTTP request object
 const carsApi = axios.create({
   //base connection url
-  baseURL: 'https://bcw-gregslist.herokuapp.com/api/cars/',
+  baseURL: 'localhost:3000/api/car/',
   //only wait 3 second for response
   timeout: 3000
 })
